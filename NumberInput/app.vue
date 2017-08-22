@@ -1,11 +1,15 @@
 <template>
     <div>
-        <input type="text" @blur="$emit('blur')" @focus="$emit('focus')" v-model="inputValue">
+        <input type="number" v-if="keyboard=='number'" :placeholder="placeholder" @blur="$emit('blur')" @focus="$emit('focus')" v-model="inputValue">
+        <input type="tel" v-else-if="keyboard=='tel'" :placeholder="placeholder" @blur="$emit('blur')" @focus="$emit('focus')" v-model="inputValue">
+        <input type="text" v-else @blur="$emit('blur')" :placeholder="placeholder" @focus="$emit('focus')" v-model="inputValue">
     </div>
 </template>
 
 <script>
 export default {
+    name: 'vue-number-input',
+
     props: {
         type: {
             type: String,
@@ -29,9 +33,16 @@ export default {
         },
         decimalLength: {
             type: Number,
-            default: 3
+            default: 2
+        },
+        keyboard: {
+            type: String,
+            default: 'text'
+        },
+        placeholder: {
+            type: String,
+            default: '请输入'
         }
-
     },
     data() {
         return {
@@ -63,6 +74,7 @@ export default {
                 nv = nv.replace(reg, '$1')
             }
             this.inputValue = nv
+            this.$emit('input', parseInt(this.inputValue.replace(/[^\d\.-]/g, '')))
         }
     }
 }
