@@ -50,7 +50,7 @@ export default {
         }
     },
     watch: {
-        inputValue: function (nv) {
+        inputValue: function(nv) {
             if (this.type == 'uint') {
                 nv = nv.replace(/[^\d]/g, '')
                 if (nv.length > this.maxLength) {
@@ -74,7 +74,7 @@ export default {
                 nv = nv.replace(reg, '$1')
             }
             this.inputValue = nv
-            this.$emit('input', parseInt(this.inputValue.replace(/[^\d\.-]/g, '')))
+            this.$emit('input', this.inputValue.replace(/[^\d\.-]/g, ''))
         }
     }
 }
