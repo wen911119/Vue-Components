@@ -16,7 +16,7 @@ export default {
             default: 'ufloat' // uint ufloat int float
         },
         value: {
-            type: Number,
+            type: Number | String,
             required: false
         },
         maxLength: {
