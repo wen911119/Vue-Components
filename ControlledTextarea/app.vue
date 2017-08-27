@@ -25,18 +25,22 @@ export default {
         }
     },
     computed: {
-        length: function () {
+        length: function() {
             return this.textareaValue.length
         }
     },
     watch: {
-        textareaValue: function (nv) {
+        textareaValue: function(nv) {
             let ln = nv.length
             if (ln > this.maxLength) {
                 this.textareaValue = nv.substring(0, this.maxLength)
             } else {
                 this.textareaValue = nv
             }
+            this.$emit('change', this.textareaValue)
+        },
+        value: function(nv) {
+            this.textareaValue = nv
         }
     }
 }
