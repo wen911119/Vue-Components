@@ -1,5 +1,5 @@
 <template>
-    <div class="common-cell">
+    <div class="common-cell" @click="$emit('click')">
         <div class="wrap">
             <label class="left">
                 <div class="title">{{title}}
