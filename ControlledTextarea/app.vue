@@ -9,6 +9,7 @@
 
 <script>
 export default {
+    name: 'vue-controlled-textarea',
     props: {
         value: {
             type: String,
