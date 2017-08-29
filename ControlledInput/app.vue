@@ -1,5 +1,5 @@
 <template>
-    <input type="text" @blur="$emit('blur')" @focus="$emit('focus')" v-model="inputValue">
+    <input type="text" :placeholder="placeholder" @blur="$emit('blur')" @focus="$emit('focus')" v-model="inputValue">
 </template>
 
 <script>
@@ -13,6 +13,10 @@ export default {
         maxLength: {
             type: Number,
             default: 20
+        },
+        placeholder: {
+            type: String,
+            default: '请输入'
         }
     },
     data() {

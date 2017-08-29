@@ -1,6 +1,6 @@
 <template>
     <div class="wj-controlled-textarea">
-        <textarea @blur="$emit('blur')" @focus="$emit('focus')" v-model="textareaValue">
+        <textarea :placeholder="placeholder" @blur="$emit('blur')" @focus="$emit('focus')" v-model="textareaValue">
         </textarea>
         <span>
             <label :class="{'warning':length>=maxLength}">{{length}}</label>/{{maxLength}}</span>
@@ -18,6 +18,10 @@ export default {
         maxLength: {
             type: Number,
             default: 30
+        },
+        placeholder: {
+            type: String,
+            default: '请输入'
         }
     },
     data() {
