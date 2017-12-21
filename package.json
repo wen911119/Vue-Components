@@ -1,0 +1,8 @@
+{
+    "scripts": {
+        "panel": "vue build ./Panel/demo.vue"
+    },
+    "devDependencies": {
+        "vue-cli": "2.8.0"
+    }
+}
