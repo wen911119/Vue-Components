@@ -45,5 +45,6 @@
 
     .content {
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 </style>
