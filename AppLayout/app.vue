@@ -6,7 +6,7 @@
         </div>
         <div class="content flex-1">
             <slot name="layout-content">
-                
+
             </slot>
         </div>
         <div class="bottom">
@@ -27,9 +27,10 @@
     }
 </script>
 <style scoped>
-    .app-layout{
+    .app-layout {
         height: 100%;
     }
+
     .flex {
         display: flex;
     }
@@ -40,5 +41,9 @@
 
     .flex-1 {
         flex: 1;
+    }
+
+    .content {
+        overflow-y: auto;
     }
 </style>

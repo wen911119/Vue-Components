@@ -58,8 +58,4 @@
     hr {
         margin: 0;
     }
-
-    .content {
-        overflow-y: auto;
-    }
 </style>
