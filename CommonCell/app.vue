@@ -19,44 +19,47 @@
 </template>
 
 <script>
-export default {
-    name: 'vue-common-cell',
-    props: {
-        required: {
-            type: Boolean,
-            default: true
-        },
-        title: {
-            type: String,
-            default: '标题'
-        },
-        last: {
-            type: Boolean,
-            default: false
+    export default {
+        name: 'vue-common-cell',
+        props: {
+            required: {
+                type: Boolean,
+                default: true
+            },
+            title: {
+                type: String,
+                default: '标题'
+            },
+            last: {
+                type: Boolean,
+                default: false
+            }
         }
     }
-}
 </script>
 
 <style scoped>
+    .wrap {
+        display: flex;
+    }
 
-.wrap {
-    display: flex;
-}
+    .left {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-.left {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-}
+    .right {
+        display: flex;
+        align-items: center;
+    }
 
-.right {
-    display: flex;
-    align-items: center;
-}
-hr{
-    margin: 0;
-}
+    hr {
+        margin: 0;
+    }
 
+    .content {
+        overflow-y: auto;
+    }
 </style>
